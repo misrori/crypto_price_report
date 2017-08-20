@@ -69,7 +69,7 @@ adatom <- get_coin_hist_data(c("ETH","CVC"), "histoday")
 tozsde_plot <- function(adatom,min_date,max_date){
   print("plot")
   print(str(adatom))
-  adatom <- adatom[as.Date(adatom$time)>as.Date(min_date) & as.Date(adatom$time)<as.Date(max_date),]
+  adatom <- adatom[as.Date(adatom$time)>=as.Date(min_date) & as.Date(adatom$time)<=as.Date(max_date),]
   list_of_markets <- unique(adatom$symbol)
 
   setorder(adatom, symbol, time)
